@@ -1,6 +1,7 @@
 import React, { Suspense, lazy, useEffect } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import axios from "axios";
 
 import {
   Button,
@@ -37,13 +38,7 @@ const SamplePage = () => {
   }, []);
 
   const handleAlert = () => {
-    dispatch(
-      addNotification({
-        variant: 'success',
-        title: 'Notification title',
-        description: 'notification description',
-      })
-    );
+    axios.get("/api/config-manager/v1/openapi.json").then(r => console.log(r.data));
   };
 
   return (
