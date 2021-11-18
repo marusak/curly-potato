@@ -38,7 +38,7 @@ const SamplePage = () => {
   }, []);
 
   const handleAlert = () => {
-    axios.get("/api/config-manager/v1/openapi.json").then(r => console.log(r.data));
+    axios.get("/api/inventory/v1/hosts").then(r => console.log(r.data));
   };
 
   return (
